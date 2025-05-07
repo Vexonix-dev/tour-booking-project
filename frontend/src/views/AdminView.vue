@@ -64,11 +64,12 @@ function deleteTour(id) {
 <template>
   <div class="min-h-screen bg-zinc-900 text-white p-10">
     <header class="flex items-center justify-between border-b border-zinc-700 pb-4 mb-6">
-      <div class="text-2xl font-bold">
-        <span>Добро пожаловать, </span>
-        <span class="text-violet-400">Рубан Никита</span>
-        <span class="text-sm text-zinc-400 ml-2">(Администратор)</span>
-      </div>
+      <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+  <router-link to="/" class="text-2xl font-bold hover:text-violet-400">
+    <span>Wan</span><span class="text-violet-500">dra</span>
+  </router-link>
+  <div class="text-sm text-zinc-400">(Администратор: Рубан Никита)</div>
+</div>
       <router-link to="/" class="text-violet-400 hover:underline">На главную</router-link>
     </header>
 
