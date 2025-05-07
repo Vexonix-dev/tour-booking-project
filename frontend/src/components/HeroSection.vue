@@ -1,9 +1,9 @@
 <template>
   <!-- Хедер -->
   <header class="flex items-center justify-between px-6 md:px-10 py-5 bg-[#1e1e1e] text-white border-b border-gray-700">
-    <div class="text-2xl font-bold">
-      <span>Wan</span><span class="text-violet-500">dra</span>
-    </div>
+    <router-link to="/" class="text-2xl font-bold hover:text-violet-400">
+  <span>Wan</span><span class="text-violet-500">dra</span>
+</router-link>
 
     <nav class="space-x-4 text-sm font-medium flex flex-wrap justify-end md:flex">
       <router-link to="/" class="hover:text-violet-400">Главная</router-link>
@@ -51,9 +51,12 @@
           <span class="text-gray-400 font-medium">Цена</span>
           <span class="text-white">₽ 87,000</span>
         </div>
-        <button class="bg-violet-500 hover:bg-violet-600 text-white rounded-full px-5 py-2 md:ml-auto shadow-lg transition">
-          🔍
-        </button>
+        <button
+  @click="scrollToTours"
+  class="bg-violet-500 hover:bg-violet-600 text-white rounded-full px-5 py-2 md:ml-auto shadow-lg transition"
+>
+  🔍
+</button>
       </div>
     </div>
 
@@ -84,6 +87,11 @@
 </template>
 
 <script setup>
+
+function scrollToTours() {
+  const el = document.getElementById('tours')
+  if (el) el.scrollIntoView({ behavior: 'smooth' })
+}
 import { isAuthenticated, logout, userRole } from '@/stores/auth'
 import { useRouter } from 'vue-router'
 import { computed } from 'vue'
