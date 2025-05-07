@@ -8,7 +8,7 @@ const router = useRouter()
 const tours = ref([
   {
     id: 1,
-    title: 'Арабы',
+    title: 'Крутая поездка',
     description: 'Отель 5 звезд Гонка',
     price: 1000000,
     country: 'ОАЭ',
